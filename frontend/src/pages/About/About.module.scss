@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+$bg-light: #f9f9f8;
+$text-dark: #1a2733;
+$text-muted: #e6dfd6;
+$accent-dot: #cda894;
+
+.aboutPage {
+  background-color: $bg-light;
+  color: $text-dark;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  
+  // Background Grid Lines
+  .bgGrid {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 0;
+
+    .line {
+      width: 1px;
+      height: 100%;
+      background-color: rgba(0,0,0,0.04);
+    }
+  }
+
+  // All sections relative to sit above grid
+  section {
+    position: relative;
+    z-index: 1;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 6rem 4rem;
+  }
+}
+
+// ------------------------------
+// 1. HERO SECTION
+// ------------------------------
+.heroSection {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  background-image: url('/about page.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // Fade from bottom effect
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, $bg-light);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .circleBg {
+    display: none;
+  }
+
+  .heroLeft {
+    flex: 1;
+    padding-left: 5%;
+    position: relative;
+    z-index: 2;
+
+    .overflowHidden {
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 1.1;
+      font-weight: 400;
+      color: $text-dark;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      color: $text-dark;
+      margin-bottom: 4rem;
+    }
+
+    .exploreBtn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      cursor: pointer;
+      color: $text-dark;
+
+      .btnLine {
+        width: 40px;
+        height: 1px;
+        background-color: $text-dark;
+        transition: width 0.3s;
+      }
+
+      &:hover .btnLine {
+        width: 60px;
+      }
+    }
+  }
+
+  .heroRight {
+    display: none;
+    flex: 1;
+
+    .heroImageContainer {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 400px 400px 0 0;
+      }
+    }
+
+    .socialSidebar {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+
+      span {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #1a2733;
+
+        &:hover {
+          color: $accent-dot;
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------
+// 2. OUR STORY SECTION
+// ------------------------------
+.storySection {
+  padding: 6rem 5%;
+  min-height: 100vh; // Increased height to prevent overlap
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $bg-light;
+  text-align: center;
+  overflow: hidden;
+
+  .watermarkText {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5%; // Very top
+    font-size: clamp(10rem, 20vw, 25rem);
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: rgba(26, 39, 51, 0.03);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .watermarkTextBottom {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 55%; // Below the top text
+    font-size: clamp(10rem, 20vw, 25rem);
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: rgba(26, 39, 51, 0.03);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .storyContent {
+    p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+      color: $text-dark;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  }
+
+  .ourStoryBtn {
+    position: absolute;
+    bottom: 20%;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .circleRing {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 10px solid #FFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: rgba(255,255,255,0.5);
+      transition: all 0.3s;
+
+      &:hover {
+        background: #FFF;
+      }
+    }
+  }
+}
+
+// ------------------------------
+// 3. MODULAR ABOUT US SECTION
+// ------------------------------
+.modularSection {
+  position: relative;
+  background-color: #f9f9f8;
+  padding: 8rem 5%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .gridLines {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 0;
+
+    div {
+      width: 1px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.05); // Faint grid lines
+    }
+  }
+
+  .modularContainer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .modularColLeft {
+    align-self: flex-start;
+    
+    .imgWrapperLeft {
+      width: 100%;
+      height: 600px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .modularColCenter {
+    text-align: left;
+    padding: 0 2rem;
+
+    .sectionLabel {
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #1a2733;
+      margin-bottom: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sectionTitle {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1a2733;
+      margin-bottom: 3rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sectionText {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #4a5568;
+      font-family: 'Inter', sans-serif;
+    }
+  }
+
+  .modularColRight {
+    align-self: flex-end;
+    margin-top: 150px; // Offset to match the design
+    
+    .imgWrapperRight {
+      width: 100%;
+      height: 500px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      margin-top: 0;
+      align-self: center;
+    }
+  }
+}
+
+// ------------------------------
+// 4. SPLIT SECTIONS (Necklaces & Match)
+// ------------------------------
+.splitSection {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .splitLeft, .splitRight {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    width: 80%;
+    height: 700px;
+    background-color: #f1ebd8;
+    position: relative;
+    
+    img {
+      position: absolute;
+      right: -10%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+    }
+  }
+
+  .imageWrapperAlt {
+    width: 100%;
+    height: 800px;
+    background-color: #e5f1f4;
+    padding: 2rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .textContent {
+    max-width: 500px;
+    padding: 0 4rem;
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 400;
+      color: $text-dark;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: $text-dark;
+      margin-bottom: 3rem;
+    }
+
+    .discoverBtn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: none;
+      border: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      color: $text-dark;
+
+      .btnLine {
+        width: 30px;
+        height: 1px;
+        background-color: $accent-dot;
+        transition: width 0.3s;
+      }
+
+      &:hover .btnLine {
+        width: 50px;
+      }
+    }
+  }
+}
+
+// ------------------------------
+// 5. COLLECTIONS SECTION
+// ------------------------------
+.collectionsSection {
+  min-height: 400px; // Drastically reduced
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  .hugeWatermark {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(8rem, 15vw, 18rem); // Reduced size
+    color: $text-muted;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    z-index: -1;
+  }
+
+  .centerImage {
+    img {
+      height: 600px;
+      width: auto;
+      object-fit: cover;
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%);
+      mask-image: linear-gradient(to top, transparent 0%, black 25%);
+    }
+  }
+}
+
+// ------------------------------
+// 6. INSPIRED CATEGORIES SECTION
+// ------------------------------
+.inspiredSection {
+  position: relative;
+  background-color: transparent; // Made transparent to blend sections
+  padding: 0 0 8rem 0; // Removed top padding completely
+  margin-top: -12rem; // Pull up to overlap the faded hand image
+  overflow: hidden;
+
+  .gridLines {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 0;
+
+    div {
+      width: 1px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.05); // Faint grid lines
+    }
+  }
+
+  .inspiredHeader {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: #334155;
+      line-height: 1.6;
+    }
+  }
+
+  .inspiredGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .categoryCard {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 24px; // Rounded corners
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); // Premium shadow
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%; // Pill width
+      padding: 1.2rem 0;
+      border-radius: 16px;
+      
+      // Premium Glassmorphism
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      
+      text-align: center;
+      color: #FFF;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      font-weight: 400;
+      pointer-events: none;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+}

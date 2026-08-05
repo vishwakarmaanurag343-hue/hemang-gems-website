@@ -1,0 +1,164 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.productDetailPage {
+  padding-top: 100px;
+  background-color: $secondary-color;
+  color: $primary-color;
+  min-height: 100vh;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .imageGallery {
+    .mainImage {
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background-color: $light-bg;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .thumbnailStrip {
+      display: flex;
+      gap: 1rem;
+
+      .thumbnail {
+        width: 100px;
+        height: 100px;
+        background-color: $light-bg;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &.active, &:hover {
+          border-color: $accent-gold;
+        }
+      }
+    }
+  }
+
+  .productInfo {
+    .category {
+      font-family: $body-font;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: $accent-gold;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-family: $heading-font;
+      color: rgba(17, 17, 17, 0.8);
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(17, 17, 17, 0.7);
+      margin-bottom: 3rem;
+    }
+
+    .specifications {
+      margin-bottom: 3rem;
+      
+      h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        li {
+          font-family: $body-font;
+          font-size: 0.95rem;
+          color: rgba(17, 17, 17, 0.8);
+          display: flex;
+          align-items: center;
+          
+          &::before {
+            content: '•';
+            color: $accent-gold;
+            margin-right: 10px;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 1.5rem;
+
+      button {
+        padding: 1.2rem 3rem;
+        font-family: $body-font;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex: 1;
+
+        &.inquireBtn {
+          background-color: $primary-color;
+          color: $secondary-color;
+          border: none;
+
+          &:hover {
+            background-color: $accent-gold;
+          }
+        }
+
+        &.downloadBtn {
+          background-color: transparent;
+          color: $primary-color;
+          border: 1px solid $primary-color;
+
+          &:hover {
+            background-color: $light-bg;
+          }
+        }
+      }
+    }
+  }
+}

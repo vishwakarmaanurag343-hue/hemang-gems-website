@@ -1,0 +1,12 @@
+.rotatingContainer {
+  display: inline-block;
+  position: relative;
+  min-width: 250px; /* Adjust based on the longest word if needed, or leave auto */
+  vertical-align: bottom;
+  
+  .word {
+    display: inline-block;
+    position: relative;
+    /* Optional: add a subtle shimmer or color to the rotating text */
+  }
+}

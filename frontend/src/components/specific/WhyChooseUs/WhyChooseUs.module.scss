@@ -1,0 +1,187 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.contactSection {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: #0d0d0d;
+  color: #fff;
+  overflow: hidden;
+
+  // Subtle horizontal line pattern
+  .bgPattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 4px,
+      rgba(255, 255, 255, 0.02) 4px,
+      rgba(255, 255, 255, 0.02) 5px
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  .leftColumn {
+    position: relative;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .bgText {
+      position: absolute;
+      top: 0;
+      left: -2rem;
+      font-family: $heading-font;
+      font-size: clamp(8rem, 15vw, 12rem);
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.04);
+      z-index: 1;
+      line-height: 1;
+      pointer-events: none;
+      
+      @media (max-width: 992px) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .textContent {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 5rem;
+
+      h2 {
+        font-family: $heading-font;
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-style: italic;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
+
+      p {
+        font-family: $body-font;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 2.5rem;
+        max-width: 450px;
+        
+        @media (max-width: 992px) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .getInTouchBtn {
+        background-color: #e64a2e; // Red/orange button from screenshot
+        color: #fff;
+        border: none;
+        padding: 0.8rem 2.5rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #c43519;
+        }
+      }
+    }
+
+    .newsletterForm {
+      display: flex;
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      z-index: 2;
+      
+      @media (max-width: 992px) {
+        margin: 0 auto;
+      }
+
+      input[type="email"] {
+        flex: 1;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1rem 1.5rem;
+        color: #fff;
+        font-family: $body-font;
+        font-style: italic;
+        font-size: 0.9rem;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.4);
+        }
+
+        &:focus {
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+      }
+
+      button {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: none;
+        padding: 0 1.5rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #333;
+        }
+      }
+    }
+  }
+
+  .rightColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .imageWrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 550px;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+    }
+  }
+}

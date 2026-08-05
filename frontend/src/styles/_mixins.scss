@@ -1,0 +1,39 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin full-bg-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin responsive-grid($min-width: 300px, $gap: 2rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin diamond-shimmer($color1: #b39b7d, $color2: #fff, $color3: #b39b7d) {
+  background: linear-gradient(
+    -45deg,
+    $color1 0%,
+    $color2 20%,
+    $color1 40%,
+    $color1 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: diamondShimmer 4s linear infinite;
+}

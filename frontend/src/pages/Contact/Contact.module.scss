@@ -1,0 +1,405 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.contactPage {
+  background-color: #F8F9FA; // Light background for the middle section
+  min-height: 100vh;
+  font-family: $body-font;
+  overflow-x: hidden;
+  position: relative;
+}
+
+// ------------------------------
+// TOP SECTION (DARK)
+// ------------------------------
+.topSection {
+  background-color: $dark-bg;
+  color: $secondary-color;
+  padding: 160px 2rem 220px; // Extra bottom padding for the overlap
+  text-align: center;
+  
+  .topContent {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      font-family: $heading-font;
+      font-weight: 600;
+      color: $secondary-color;
+    }
+    
+    p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// ------------------------------
+// MIDDLE SECTION
+// ------------------------------
+.middleSection {
+  position: relative;
+  margin-top: -10vw; // Pull it up over the dark section
+  padding-top: 8vw;
+  padding-bottom: 6rem;
+  z-index: 10;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F8F9FA;
+    clip-path: polygon(0 0, 100% 6vw, 100% 100%, 0 100%);
+    z-index: -1;
+  }
+}
+
+.middleContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+// LEFT COLUMN: FORM CARD
+.formSide {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  margin-top: -180px; // Negative margin to float over the dark section
+  position: relative;
+  z-index: 20;
+
+  @media (max-width: 992px) {
+    margin-top: -120px;
+    padding: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    .formRow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .formGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      
+      label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #444;
+      }
+      
+      input, textarea {
+        background-color: #F8F9FA;
+        border: 1px solid #EBEBEB;
+        border-radius: 8px;
+        padding: 0.8rem 1rem;
+        font-family: $body-font;
+        font-size: 0.9rem;
+        color: #111;
+        transition: all 0.2s;
+        
+        &:focus {
+          outline: none;
+          border-color: $accent-gold;
+          box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.1);
+        }
+        
+        &::placeholder {
+          color: #AAA;
+        }
+      }
+      
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+    }
+    
+    .formFooter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      
+      @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      
+      .checkboxLabel {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        
+        input {
+          cursor: pointer;
+          accent-color: $accent-gold;
+        }
+        
+        span {
+          font-size: 0.8rem;
+          color: #666;
+        }
+      }
+      
+      button {
+        background-color: $accent-gold;
+        color: #FFFFFF;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        
+        &:hover {
+          background-color: #a67f2b;
+        }
+        
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+      }
+    }
+    
+    .statusMessage {
+      color: $accent-gold;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  }
+}
+
+// RIGHT COLUMN: INFO
+.infoSide {
+  padding-top: 2rem;
+  
+  h2 {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-family: $heading-font;
+    color: #111;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    
+    span {
+      font-weight: normal;
+      color: #666;
+    }
+  }
+  
+  .infoDesc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+  
+  .infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+    
+    .infoCard {
+      background-color: #FFFFFF;
+      padding: 1.2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+      
+      .iconBox {
+        background-color: rgba(200, 155, 60, 0.1);
+        color: $accent-gold;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      
+      .cardText {
+        h4 {
+          font-size: 0.9rem;
+          font-weight: 700;
+          color: #111;
+          margin-bottom: 0.3rem;
+        }
+        p {
+          font-size: 0.8rem;
+          color: #666;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+  
+  .socialSection {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+    h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #111;
+    }
+    
+    .socialIcons {
+      display: flex;
+      gap: 0.8rem;
+      
+      .socialCircle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $accent-gold;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.2s, background-color 0.2s;
+        
+        &:hover {
+          transform: translateY(-3px);
+          background-color: $dark-bg;
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------
+// BOTTOM CTA SECTION
+// ------------------------------
+.bottomSection {
+  background-color: $dark-bg;
+  color: $secondary-color;
+  padding: 8rem 2rem 10rem; // Extra top padding due to slant overlap
+  text-align: center;
+  position: relative;
+  
+  // Create slanted top edge using clip path
+  clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+  margin-top: -4vw;
+  z-index: 5;
+  
+  .ctaBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-family: $heading-font;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: $secondary-color;
+    
+    span {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: normal;
+    }
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+  }
+  
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    background-color: $accent-gold;
+    color: #FFF;
+    border-radius: 30px;
+    padding: 0.4rem;
+    padding-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s, background-color 0.2s;
+    
+    &:hover {
+      transform: translateY(-3px);
+      background-color: #b88d30;
+    }
+    
+    span {
+      margin-right: 1rem;
+    }
+    
+    .ctaIcon {
+      background-color: #FFF;
+      color: $accent-gold;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

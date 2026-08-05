@@ -1,0 +1,10 @@
+.maskContainer {
+  overflow: hidden;
+  position: relative;
+  display: inline-block; /* Ensure it wraps the text properly */
+}
+
+.maskContent {
+  display: inline-block;
+  /* initial transform will be set by GSAP */
+}

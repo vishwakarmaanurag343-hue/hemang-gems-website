@@ -1,0 +1,92 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.testimonialsSection {
+  padding: 8rem 2rem;
+  background-color: $primary-color;
+  color: $secondary-color;
+  overflow: hidden;
+
+  .header {
+    text-align: center;
+    margin-bottom: 5rem;
+    
+    h2 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      color: $secondary-color;
+      position: relative;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 2px;
+        background-color: $accent-gold;
+        margin: 1.5rem auto 0;
+      }
+    }
+  }
+
+  .sliderContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    padding: 0 3rem;
+  }
+
+  .quoteIcon {
+    font-size: 4rem;
+    color: rgba(200, 155, 60, 0.2);
+    margin-bottom: 2rem;
+    font-family: $heading-font;
+    line-height: 1;
+  }
+
+  .review {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-family: $heading-font;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .author {
+    h4 {
+      font-size: 1.1rem;
+      font-family: $body-font;
+      letter-spacing: 1px;
+      color: $secondary-color;
+      margin-bottom: 0.3rem;
+    }
+    
+    p {
+      color: $accent-gold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: $accent-gold;
+        transform: scale(1.3);
+      }
+    }
+  }
+}

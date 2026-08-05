@@ -1,0 +1,152 @@
+@use '../../../styles/variables' as *;
+
+.showcaseSection {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  color: #333;
+  overflow: hidden;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+  }
+
+  .productCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      font-family: $heading-font;
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .imageWrapper {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 2rem;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        background-color: transparent;
+      }
+    }
+
+    .productName {
+      font-family: $body-font;
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .detailsBtn {
+      background-color: #e64a2e; // Red/orange button from screenshot
+      color: #fff;
+      border: none;
+      padding: 0.6rem 2rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #c43519;
+      }
+    }
+  }
+
+  .centerCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .imageGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
+      aspect-ratio: 1;
+
+      .gridItem {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+
+        .searchOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+          opacity: 1;
+
+          .searchCircle {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            backdrop-filter: blur(2px);
+          }
+        }
+      }
+    }
+
+    .carouselArrows {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      button {
+        background: none;
+        border: none;
+        color: #333;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

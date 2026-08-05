@@ -1,0 +1,126 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.home-page {
+  width: 100%;
+  background-color: #fafafa; // Morning white color
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: $secondary-color;
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include full-bg-image;
+    
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to bottom, rgba(250, 250, 250, 0) 0%, #fafafa 100%);
+      z-index: 2;
+    }
+  }
+
+  .hero-content-new {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 5%;
+    color: #FFF;
+
+    .hero-text-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      
+      .top-content {
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        max-width: 450px;
+        color: #FFF;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+
+        .rotating-black {
+          color: #000;
+          text-shadow: none;
+          font-weight: 600;
+        }
+      }
+
+      .text-link-btn {
+        background: transparent;
+        border: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 3rem;
+        text-shadow: none; // override
+        position: relative;
+        text-transform: uppercase;
+        @include diamond-shimmer(#111, #555, #111); // Dark shimmer because home title is black now
+        
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 0;
+          height: 1px;
+          background-color: #FFF;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(5rem, 10vw, 9.5rem);
+        font-weight: 400;
+        line-height: 0.9;
+        margin: 0;
+        color: #111;
+        letter-spacing: -2px;
+      }
+    }
+  }
+}

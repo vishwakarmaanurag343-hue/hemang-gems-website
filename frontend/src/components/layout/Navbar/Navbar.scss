@@ -1,0 +1,136 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: 1000;
+  transition: $transition-smooth;
+  background-color: transparent;
+  color: $secondary-color;
+
+  &.scrolled {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+    padding: 1rem 0;
+    box-shadow: none;
+    color: #FFF;
+  }
+
+  .nav-container {
+    @include flex-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Left Side: Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: $heading-font;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FFF;
+    text-decoration: none;
+
+    img {
+      display: block;
+    }
+  }
+
+  /* Center: Nav Pill */
+  .nav-pill {
+    display: flex;
+    align-items: center;
+    background: rgba(17, 25, 40, 0.6); // Deeper tint
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 40px;
+    padding: 0.4rem;
+    gap: 0.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: #FFF;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      
+      &.active {
+        background-color: $accent-gold;
+        color: #000;
+        font-weight: 600;
+      }
+    }
+  }
+
+  /* Right Side: Contact Button & Mobile Toggle */
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .contact-btn {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      color: #FFF;
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  .mobile-toggle {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: inherit;
+  }
+
+  @media (max-width: 900px) {
+    .nav-pill {
+      display: none; // Hide center pill on mobile
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-btn {
+      display: none; // Hide contact button on small mobile
+    }
+    .mobile-toggle {
+      display: block;
+    }
+    .logo span {
+      display: none; // Hide text next to logo on very small screens to save space
+    }
+  }
+}
