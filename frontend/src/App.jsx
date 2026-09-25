@@ -12,7 +12,7 @@ import Contact from './pages/Contact/Contact';
 // Layout & Common
 import Navbar from './components/layout/Navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
-import ChatWidget from './components/common/ChatWidget/ChatWidget';
+
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -27,7 +27,7 @@ const PageWrapper = ({ children }) => (
 
 const AnimatedRoutes = () => {
   const location = useLocation();
-  
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -50,7 +50,7 @@ function App() {
           <AnimatedRoutes />
         </main>
         <Footer />
-        <ChatWidget />
+
       </div>
     </Router>
   );

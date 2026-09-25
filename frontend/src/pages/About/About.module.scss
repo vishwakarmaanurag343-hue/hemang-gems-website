@@ -408,11 +408,14 @@ $accent-dot: #cda894;
     height: 800px;
     background-color: #e5f1f4;
     padding: 2rem;
+    border-radius: 28px;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 20px;
     }
   }
 
@@ -558,6 +561,9 @@ $accent-dot: #cda894;
 
   .categoryCard {
     position: relative;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
     width: 100%;
     aspect-ratio: 3 / 4;
     overflow: hidden;

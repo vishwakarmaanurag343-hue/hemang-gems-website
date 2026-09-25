@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowDown } from 'lucide-react';
@@ -92,7 +93,7 @@ const About = () => {
           }
         );
       });
-      
+
       // Give ScrollTrigger a moment to refresh after DOM paints
       setTimeout(() => ScrollTrigger.refresh(), 100);
     });
@@ -142,7 +143,7 @@ const About = () => {
         <div ref={text1Ref} className={styles.watermarkText}>jewelry</div>
         <div className={styles.storyContent}>
           <div className={styles.overflowHidden}>
-            <p className="animateText">It has always been to produce awesome<br />products for the dynamic urban lifestyle of the<br />modern woman.</p>
+            <p className="animateText">Crafting timeless brilliance and bespoke elegance<br />designed for the sophistication of the<br />modern muse.</p>
           </div>
         </div>
         <div ref={text2Ref} className={styles.watermarkTextBottom}>selection</div>
@@ -210,7 +211,7 @@ const About = () => {
         </div>
         <div className={styles.splitRight}>
           <div className={styles.imageWrapperAlt}>
-            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=600&auto=format&fit=crop" alt="Perfect Match" />
+            <img src="/WhatsApp Image 2026-09-23 at 9.08.30 M.jpeg" alt="Perfect Match" />
           </div>
         </div>
       </section>
@@ -237,18 +238,18 @@ const About = () => {
         </div>
 
         <div className={styles.inspiredGrid}>
-          <div className={styles.categoryCard}>
-            <img src="https://images.unsplash.com/photo-1599643478514-4a820c56a8e8?q=80&w=600&auto=format&fit=crop" alt="Necklaces" />
+          <Link to="/catalogue#south-collection" className={styles.categoryCard}>
+            <img src="/New folder/earing4.png" alt="Necklaces" />
             <h3>Necklaces</h3>
-          </div>
-          <div className={styles.categoryCard}>
-            <img src="https://images.unsplash.com/photo-1605100804763-247f6612d544?q=80&w=600&auto=format&fit=crop" alt="Rings" />
+          </Link>
+          <Link to="/catalogue#ring" className={styles.categoryCard}>
+            <img src="/New folder/ring1.png" alt="Rings" />
             <h3>Rings</h3>
-          </div>
-          <div className={styles.categoryCard}>
-            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600&auto=format&fit=crop" alt="Earrings" />
+          </Link>
+          <Link to="/catalogue#earring" className={styles.categoryCard}>
+            <img src="/WhatsApp Image 2026-09-23 at 9.08.29 PM.jpeg" alt="Earrings" />
             <h3>Earrings</h3>
-          </div>
+          </Link>
         </div>
       </section>
     </div>

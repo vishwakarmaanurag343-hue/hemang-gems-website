@@ -49,14 +49,17 @@ const AboutPreview = () => {
     <section className={styles.aboutPreview} ref={sectionRef}>
       <div className={styles.container}>
         <div className={styles.imageWrapper} ref={imageRef}>
-          <img 
-            src="/secondsection.jpg" 
-            alt="Jewelry Design" 
+          <video 
+            src="/document_6177043783541071700.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className={styles.videoPlayer}
           />
         </div>
         <div className={styles.contentWrapper} ref={contentRef}>
           <div className={styles.titleContainer}>
-            <span className={styles.chapterMarker}><ScrambleText text="01." /></span>
             <h2>Product Custom<br/>Design Engineering</h2>
           </div>
           

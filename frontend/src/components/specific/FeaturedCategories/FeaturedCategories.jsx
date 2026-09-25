@@ -47,58 +47,63 @@ const FeaturedCategories = () => {
             <p>
               Bringing forward a collection with an aesthetic appeal for a broad market while ensuring exceptional results is a challenge for any organization. Hemang Gems provides a systematic approach to creating timeless designs that are consistently reproduced through the company's in-house capabilities.
             </p>
-            <Link to="/catalogue" className={styles.viewLink}>
+            <Link to="/catalogue#south-collection" className={styles.viewLink}>
               VIEW CATALOGUE <ArrowRight size={18} />
             </Link>
           </div>
           <div className={styles.redArc}></div>
         </div>
         
-        <div 
+        <Link 
+          to="/catalogue#south-collection"
           className={`${styles.bentoItem} ${styles.imageItem}`}
           ref={el => itemsRef.current[1] = el}
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1605100804763-247f67b2548e?q=80&w=800&auto=format&fit=crop')` }}
+          style={{ backgroundImage: `url('/New folder/south4.png')` }}
         >
           <div className={styles.gradientOverlay}></div>
-          <h3>Metals, Techniques and Wastage</h3>
-        </div>
+          <h3>South Collection</h3>
+        </Link>
         
-        <div 
+        <Link 
+          to="/catalogue#earring"
           className={`${styles.bentoItem} ${styles.imageItem} ${styles.darkBg}`}
           ref={el => itemsRef.current[2] = el}
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=800&auto=format&fit=crop')` }}
+          style={{ backgroundImage: `url('/New folder/south5.png')` }}
         >
           <div className={styles.gradientOverlay}></div>
-          <h3>Watches</h3>
-        </div>
+          <h3>Earrings</h3>
+        </Link>
 
         {/* Bottom Row */}
-        <div 
+        <Link 
+          to="/catalogue#diamond-jewelry"
           className={`${styles.bentoItem} ${styles.span2} ${styles.imageItem}`}
           ref={el => itemsRef.current[3] = el}
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1200&auto=format&fit=crop')` }}
+          style={{ backgroundImage: `url('/New folder/south6.png')` }}
         >
           <div className={styles.gradientOverlay}></div>
-          <h3>Plating and Texture</h3>
-        </div>
+          <h3>Diamond Jewelry</h3>
+        </Link>
         
-        <div 
+        <Link 
+          to="/catalogue#ring"
           className={`${styles.bentoItem} ${styles.imageItem}`}
           ref={el => itemsRef.current[4] = el}
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1599643478514-4a820c56a8e8?q=80&w=800&auto=format&fit=crop')` }}
+          style={{ backgroundImage: `url('/New folder/south7.png')` }}
         >
           <div className={styles.gradientOverlay}></div>
-          <h3>Gemstones</h3>
-        </div>
+          <h3>Rings</h3>
+        </Link>
         
-        <div 
+        <Link 
+          to="/catalogue#mangalsutra"
           className={`${styles.bentoItem} ${styles.imageItem}`}
           ref={el => itemsRef.current[5] = el}
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop')` }}
+          style={{ backgroundImage: `url('/New folder/south8.png')` }}
         >
           <div className={styles.gradientOverlay}></div>
-          <h3>Pearl Jewelry</h3>
-        </div>
+          <h3>Mangalsutras</h3>
+        </Link>
 
       </div>
     </section>

@@ -1,62 +1,136 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Sparkles, ShieldCheck, Gem, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import styles from './WhyChooseUs.module.scss';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const WhyChooseUs = () => {
   const sectionRef = useRef(null);
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const [subscribed, setSubscribed] = useState(false);
+  const [email, setEmail] = useState('');
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      const el = sectionRef.current;
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email.trim()) {
+      setSubscribed(true);
+      setTimeout(() => {
+        setEmail('');
+        setSubscribed(false);
+      }, 4000);
+    }
+  };
 
-      gsap.fromTo(leftRef.current,
-        { opacity: 0, x: -50 },
-        { scrollTrigger: { trigger: el, start: 'top 75%' }, opacity: 1, x: 0, duration: 1.5, ease: 'power3.out' }
-      );
-
-      gsap.fromTo(rightRef.current,
-        { opacity: 0, x: 50 },
-        { scrollTrigger: { trigger: el, start: 'top 75%' }, opacity: 1, x: 0, duration: 1.5, ease: 'power3.out', delay: 0.2 }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
+  const perks = [
+    { icon: Gem, title: "100% Certified Diamonds", desc: "GIA & IGI verified brilliance" },
+    { icon: ShieldCheck, title: "Bespoke Custom Craft", desc: "Handcrafted in-house by master artisans" },
+    { icon: Clock, title: "Private Consultation", desc: "One-on-one personalized curation" }
+  ];
 
   return (
-    <section className={styles.contactSection} ref={sectionRef}>
-      <div className={styles.bgPattern}></div>
+    <section className={styles.luxuryConsultSection} ref={sectionRef}>
+      <div className={styles.ambientGlow}></div>
       <div className={styles.container}>
         
-        <div className={styles.leftColumn} ref={leftRef}>
-          <div className={styles.bgText}>Contact</div>
-          <div className={styles.textContent}>
-            <h2>How can we help you?</h2>
-            <p>
-              Whether it be to add to your collection, that first special wristwatch or the restoration of a much loved heirloom we are here to help.
-            </p>
-            <button className={styles.getInTouchBtn}>GET IN TOUCH</button>
+        {/* Left Column: Editorial Consultation & Newsletter */}
+        <motion.div 
+          className={styles.leftColumn}
+          initial={{ opacity: 0, x: -40 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className={styles.badge}>
+            <Sparkles size={14} className={styles.sparkleIcon} />
+            <span>BESPOKE CONCIERGE</span>
           </div>
 
-          <div className={styles.newsletterForm}>
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit">SUBSCRIBE NEWSLETTER</button>
-          </div>
-        </div>
+          <h2 className={styles.headline}>
+            How can we craft <br />
+            <span className={styles.goldText}>your legacy?</span>
+          </h2>
 
-        <div className={styles.rightColumn} ref={rightRef}>
-          <div className={styles.imageWrapper}>
-            <img 
-              src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=800&auto=format&fit=crop" 
-              alt="Classic Watch" 
-            />
+          <p className={styles.subtext}>
+            Whether you are envisioning a one-of-a-kind engagement solitaire, seeking an exquisite high-jewelry heirloom, or custom-engineering a bridal suite, our master jewelers are dedicated to bringing your vision to life.
+          </p>
+
+          <div className={styles.perksGrid}>
+            {perks.map((perk, i) => (
+              <motion.div 
+                key={i} 
+                className={styles.perkItem}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
+              >
+                <div className={styles.perkIconWrapper}>
+                  <perk.icon size={18} />
+                </div>
+                <div>
+                  <h4>{perk.title}</h4>
+                  <p>{perk.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
+
+          <div className={styles.actionsRow}>
+            <Link to="/contact" className={styles.primaryCta}>
+              Book A Consultation <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* Newsletter Box */}
+          <form className={styles.newsletterCard} onSubmit={handleSubscribe}>
+            <div className={styles.newsletterHeader}>
+              <h4>Join The Hemang Circle</h4>
+              <p>Receive exclusive invitations to private viewings and seasonal edits.</p>
+            </div>
+            <div className={styles.inputGroup}>
+              <input 
+                type="email" 
+                placeholder="Enter your private email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required 
+              />
+              <button type="submit" className={styles.submitBtn}>
+                {subscribed ? (
+                  <span className={styles.successMsg}><CheckCircle2 size={16} /> Subscribed</span>
+                ) : (
+                  "Subscribe"
+                )}
+              </button>
+            </div>
+          </form>
+        </motion.div>
+
+        {/* Right Column: Visual Showcase */}
+        <motion.div 
+          className={styles.rightColumn}
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className={styles.imageShowcaseCard}>
+            <div className={styles.imageWrapper}>
+              <img 
+                src="/New folder/diamon jwelery.png" 
+                alt="High Jewelry Haute Joaillerie" 
+              />
+              <div className={styles.imageGradientOverlay}></div>
+            </div>
+
+            <motion.div 
+              className={styles.floatingBadge}
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            >
+              <span className={styles.tag}>HAUTE JOAILLERIE</span>
+              <h3>Private Atelier</h3>
+              <p>Hand-selected stones with exceptional fire & clarity.</p>
+            </motion.div>
+          </div>
+        </motion.div>
 
       </div>
     </section>

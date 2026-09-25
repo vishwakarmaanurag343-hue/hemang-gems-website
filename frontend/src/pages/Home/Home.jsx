@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import AboutPreview from '../../components/specific/AboutPreview/AboutPreview';
 import RotatingText from '../../components/common/RotatingText/RotatingText';
@@ -35,14 +36,14 @@ const Home = () => {
     <div className="home-page">
       <section className="hero-section">
         <div className="hero-background" ref={bgRef}>
-          <video src="/home-page-video.mp4" autoPlay loop muted playsInline className="hero-video" />
+          <video src="/homepage.mp4" autoPlay loop muted playsInline className="hero-video" />
         </div>
         <div className="hero-content-new" ref={contentRef}>
           <div className="hero-text-left">
             <p>
               Meticulously crafted, <RotatingText words={['enduringly yours.', 'exclusively yours.', 'forever yours.']} className="rotating-black" /> Elevate your daily presence with pieces designed to belong to you alone.
             </p>
-            <button className="text-link-btn">START SHOPPING</button>
+            <Link to="/catalogue" className="text-link-btn">START SHOPPING</Link>
             <h1>Silent Luxury</h1>
           </div>
         </div>

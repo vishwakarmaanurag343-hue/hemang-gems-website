@@ -51,11 +51,46 @@ const Navbar = () => {
           <button 
             className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
 
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      <div className={`mobile-menu-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-links">
+          <Link 
+            to="/" 
+            className={location.pathname === '/' ? 'active' : ''}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/about" 
+            className={location.pathname === '/about' ? 'active' : ''}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            About
+          </Link>
+          <Link 
+            to="/catalogue" 
+            className={location.pathname === '/catalogue' ? 'active' : ''}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Catalogue
+          </Link>
+          <Link 
+            to="/contact" 
+            className={`contact-mobile-link ${location.pathname === '/contact' ? 'active' : ''}`}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Contact Us
+          </Link>
+        </div>
       </div>
     </nav>
   );

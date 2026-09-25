@@ -183,7 +183,8 @@ const Contact = () => {
                 <div className={styles.iconBox}><Mail size={20} /></div>
                 <div className={styles.cardText}>
                   <h4>Email</h4>
-                  <p>contact@hemanggems.com</p>
+                  <p><a href="mailto:support@hemanggems.com" style={{ color: 'inherit', textDecoration: 'none' }}>support@hemanggems.com</a></p>
+                  <p><a href="mailto:hitesh@hemanggems.com" style={{ color: 'inherit', textDecoration: 'none' }}>hitesh@hemanggems.com</a></p>
                 </div>
               </div>
             </div>

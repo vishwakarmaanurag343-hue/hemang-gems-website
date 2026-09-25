@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Search, ArrowLeft, ArrowRight } from 'lucide-react';
@@ -42,53 +43,52 @@ const OurServices = () => {
         
         {/* Left Column */}
         <div className={styles.productCol} ref={leftRef}>
-          <h2><MaskedText text="Gold Metal" /></h2>
+          <h2><MaskedText text="Gold Diamond Jewellery" /></h2>
           <div className={styles.imageWrapper}>
             <img 
-              src="https://images.unsplash.com/photo-1605100804763-247f67b2548e?q=80&w=600&auto=format&fit=crop" 
+              src="/New folder/diamon jwelery1.png" 
               alt="Diamond Promise Ring" 
             />
           </div>
           <span className={styles.productName}>Diamond Promise Ring</span>
-          <button className={styles.detailsBtn}>DETAILS</button>
+          <Link to="/catalogue#ring" className={styles.detailsBtn}>VIEW RINGS</Link>
         </div>
 
         {/* Center Column */}
         <div className={styles.centerCol} ref={centerRef}>
           <div className={styles.imageGrid}>
-            <div className={styles.gridItem}>
-              <img src="https://images.unsplash.com/photo-1589674781759-c21c37956a44?q=80&w=500&auto=format&fit=crop" alt="Process 1" />
-            </div>
-            <div className={styles.gridItem}>
+            <Link to="/catalogue#diamond-jewelry" className={styles.gridItem}>
+              <img src="/New folder/diamon jwelery2.png" alt="Diamond Jewelry 1" />
+            </Link>
+            <Link to="/catalogue#diamond-jewelry" className={styles.gridItem}>
               <div className={styles.searchOverlay}>
                 <div className={styles.searchCircle}><Search size={20} /></div>
               </div>
-              <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=500&auto=format&fit=crop" alt="Process 2" />
-            </div>
-            <div className={styles.gridItem}>
-              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=500&auto=format&fit=crop" alt="Process 3" />
-            </div>
-            <div className={styles.gridItem}>
-              <img src="https://images.unsplash.com/photo-1599643478514-4a820c56a8e8?q=80&w=500&auto=format&fit=crop" alt="Process 4" />
-            </div>
+              <img src="/New folder/diamon jwelery3.png" alt="Diamond Jewelry 2" />
+            </Link>
+            <Link to="/catalogue#diamond-jewelry" className={styles.gridItem}>
+              <img src="/New folder/diamon jwelery4.png" alt="Diamond Jewelry 3" />
+            </Link>
+            <Link to="/catalogue#diamond-jewelry" className={styles.gridItem}>
+              <img src="/New folder/diamon jwelery5.png" alt="Diamond Jewelry 4" />
+            </Link>
           </div>
           <div className={styles.carouselArrows}>
-            <button><ArrowLeft size={18} /></button>
-            <button><ArrowRight size={18} /></button>
+            <Link to="/catalogue#diamond-jewelry" className={styles.exploreGridLink}>EXPLORE ALL DESIGNS &rarr;</Link>
           </div>
         </div>
 
         {/* Right Column */}
         <div className={styles.productCol} ref={rightRef}>
-          <h2><MaskedText text="Silver Pieces" /></h2>
+          <h2><MaskedText text="Silver Jewellery" /></h2>
           <div className={styles.imageWrapper}>
             <img 
-              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop" 
+              src="/New folder/diamon jwelery6.png" 
               alt="Princess-Cut Diamond" 
             />
           </div>
           <span className={styles.productName}>Princess-Cut Diamond</span>
-          <button className={styles.detailsBtn}>DETAILS</button>
+          <Link to="/catalogue#diamond-jewelry" className={styles.detailsBtn}>VIEW PIECES</Link>
         </div>
 
       </div>

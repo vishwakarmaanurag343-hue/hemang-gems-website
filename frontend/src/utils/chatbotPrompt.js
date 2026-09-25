@@ -166,7 +166,8 @@ Phone:
 
 Email:
 
-hemanggemsdmcc@gmail.com
+support@hemanggems.com
+hitesh@hemanggems.com
 
 Location:
 
@@ -438,7 +439,8 @@ Phone:
 +971 52890 9248
 
 Email:
-hemanggemsdmcc@gmail.com
+support@hemanggems.com
+hitesh@hemanggems.com
 
 After every response, always display three suggested questions.
 

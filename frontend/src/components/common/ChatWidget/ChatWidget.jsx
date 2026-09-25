@@ -39,8 +39,8 @@ const ChatWidget = () => {
 
   const handleUserMessage = (text) => {
     if (!text.trim()) return;
-    
-    const newUserMsg = { id: Date.now(), text, sender: 'user', timestamp: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) };
+
+    const newUserMsg = { id: Date.now(), text, sender: 'user', timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
     setMessages(prev => [...prev, newUserMsg]);
     setInputValue('');
     setIsTyping(true);
@@ -48,11 +48,11 @@ const ChatWidget = () => {
     // Simulate AI response processing
     setTimeout(() => {
       setIsTyping(false);
-      const aiResponse = { 
-        id: Date.now() + 1, 
-        text: "Our company name is Hemang Gems FZCO.\n\nWe are a Jewellery Manufacturing & Repairing Specialist based in Dubai, UAE.", 
+      const aiResponse = {
+        id: Date.now() + 1,
+        text: "Our company name is Hemang Gems FZCO.\n\nWe are a Jewellery Manufacturing & Repairing Specialist based in Dubai, UAE.",
         sender: 'ai',
-        timestamp: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         suggestions: [
           "What services do you provide?",
           "Do you manufacture custom jewellery?",
@@ -91,7 +91,7 @@ const ChatWidget = () => {
             >
               Ask me anything! ✨
             </motion.div>
-            <motion.button 
+            <motion.button
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}
@@ -107,7 +107,7 @@ const ChatWidget = () => {
       {/* Main Chat Interface */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -130,14 +130,14 @@ const ChatWidget = () => {
 
             {/* Content Area */}
             <div className={styles.contentArea}>
-              
+
               {/* Empty State / Welcome Screen */}
               {messages.length === 0 && (
                 <div className={styles.welcomeScreen}>
                   <div className={styles.aiOrbLarge}></div>
                   <h2>How can I help you today?</h2>
                   <p>Ask anything about jewellery manufacturing, repair, custom orders or pricing.</p>
-                  
+
                   <div className={styles.suggestionGrid}>
                     {initialSuggestions.map((suggestion, idx) => (
                       <motion.button
@@ -158,19 +158,19 @@ const ChatWidget = () => {
               {messages.length > 0 && (
                 <div className={styles.messageList}>
                   {messages.map((msg) => (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      key={msg.id} 
+                      key={msg.id}
                       className={`${styles.messageRow} ${styles[msg.sender]}`}
                     >
                       <div className={styles.messageBubble}>
                         <div className={styles.messageText}>{msg.text}</div>
                         <span className={styles.timestamp}>{msg.timestamp}</span>
                       </div>
-                      
+
                       {msg.suggestions && msg.suggestions.length > 0 && (
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.3 }}
@@ -179,8 +179,8 @@ const ChatWidget = () => {
                           <p className={styles.suggestionTitle}>You may also ask</p>
                           <div className={styles.followUpChips}>
                             {msg.suggestions.map((suggestion, idx) => (
-                              <button 
-                                key={idx} 
+                              <button
+                                key={idx}
                                 className={styles.chip}
                                 onClick={() => handleQuickReply(suggestion)}
                               >
@@ -192,9 +192,9 @@ const ChatWidget = () => {
                       )}
                     </motion.div>
                   ))}
-                  
+
                   {isTyping && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className={`${styles.messageRow} ${styles.ai}`}
@@ -205,7 +205,7 @@ const ChatWidget = () => {
                       </div>
                     </motion.div>
                   )}
-                  
+
                   <div ref={messagesEndRef} />
                 </div>
               )}
@@ -217,15 +217,15 @@ const ChatWidget = () => {
                 <button type="button" className={styles.attachmentBtn}>
                   <Paperclip size={18} />
                 </button>
-                <textarea 
-                  placeholder="Ask about jewellery..." 
+                <textarea
+                  placeholder="Ask about jewellery..."
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={handleKeyDown}
                   rows={1}
                 />
-                <motion.button 
-                  type="submit" 
+                <motion.button
+                  type="submit"
                   disabled={!inputValue.trim()}
                   className={styles.sendBtn}
                   whileHover={{ scale: 1.05 }}
@@ -235,7 +235,7 @@ const ChatWidget = () => {
                 </motion.button>
               </form>
             </div>
-            
+
           </motion.div>
         )}
       </AnimatePresence>

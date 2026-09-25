@@ -111,23 +111,106 @@
   .mobile-toggle {
     display: none;
     cursor: pointer;
-    background: none;
-    border: none;
-    color: inherit;
+    background: rgba(17, 25, 40, 0.6);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  /* Mobile Drawer Menu */
+  .mobile-menu-drawer {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    margin-top: 0.5rem;
+    background: rgba(15, 20, 30, 0.95);
+    backdrop-filter: blur(30px) saturate(190%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0.9rem 1.2rem;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        border-radius: 16px;
+        transition: all 0.25s ease;
+
+        &:hover {
+          color: #FFF;
+          background-color: rgba(255, 255, 255, 0.08);
+          padding-left: 1.5rem;
+        }
+
+        &.active {
+          background-color: $accent-gold;
+          color: #000;
+          font-weight: 600;
+        }
+
+        &.contact-mobile-link {
+          margin-top: 0.5rem;
+          border: 1px solid rgba(200, 155, 60, 0.4);
+          color: $accent-gold;
+
+          &.active {
+            background-color: $accent-gold;
+            color: #000;
+          }
+        }
+      }
+    }
   }
 
   @media (max-width: 900px) {
     .nav-pill {
       display: none; // Hide center pill on mobile
     }
+    .mobile-toggle {
+      display: flex;
+    }
+    .mobile-menu-drawer {
+      display: block;
+    }
   }
 
   @media (max-width: 768px) {
     .contact-btn {
       display: none; // Hide contact button on small mobile
-    }
-    .mobile-toggle {
-      display: block;
     }
     .logo span {
       display: none; // Hide text next to logo on very small screens to save space

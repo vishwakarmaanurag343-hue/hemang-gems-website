@@ -137,56 +137,65 @@
       
       .largeNumber {
         font-family: $heading-font;
-        font-size: 14rem;
-        font-weight: 700;
-        color: #e64a2e; // Red/orange color
+        font-size: 11rem;
+        font-weight: 300;
+        color: rgba(200, 155, 60, 0.2); // Luxury subtle gold watermark
         line-height: 0.8;
-        margin-right: -3rem; // Overlap with title
+        margin-right: -2.5rem;
         z-index: 1;
       }
       
       h2 {
         font-family: $heading-font;
-        font-size: clamp(2.5rem, 4vw, 3.5rem);
-        font-weight: 400;
-        font-style: italic;
-        line-height: 1.1;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        font-weight: 500;
+        line-height: 1.15;
         position: relative;
         z-index: 2;
-        color: #222;
-        letter-spacing: 1px;
+        color: #111;
+        letter-spacing: -0.5px;
       }
     }
 
     p {
       font-size: 0.95rem;
       line-height: 1.8;
-      color: #777;
+      color: #666;
       font-family: $body-font;
       max-width: 500px;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
 
       @media (max-width: 992px) {
-        margin: 0 auto 3rem auto;
+        margin: 0 auto 2.5rem auto;
       }
     }
 
     .viewLink {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      color: #e64a2e; // Red/orange color
+      gap: 0.6rem;
+      color: #FFF;
+      background-color: #111;
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
       font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
       text-decoration: none;
+      transition: all 0.3s ease;
       
       svg {
         transition: transform 0.3s ease;
       }
       
-      &:hover svg {
-        transform: translateX(5px);
+      &:hover {
+        background-color: $accent-gold;
+        color: #000;
+        transform: translateY(-2px);
+        
+        svg {
+          transform: translateX(4px);
+        }
       }
     }
   }

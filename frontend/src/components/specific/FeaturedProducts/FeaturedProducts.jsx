@@ -62,13 +62,13 @@ const FeaturedProducts = () => {
           
           <div className={`${styles.watchItem} ${styles.watch1}`}>
             <div className={styles.imageContainer}>
-              <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=500&auto=format&fit=crop" alt="Omega Watch" />
+              <img src="/New folder/earing.png" alt="Diamond Stud Earrings" />
             </div>
             <div className={styles.watchLabel}>
               <div className={styles.line}></div>
               <div>
-                <h4>OMEGA</h4>
-                <span>CENTENARY CHRONOMETER</span>
+                <h4>HEMANG</h4>
+                <span>DIAMOND STUD EARRINGS</span>
               </div>
             </div>
           </div>
@@ -76,13 +76,13 @@ const FeaturedProducts = () => {
           <div className={`${styles.watchItem} ${styles.watch2}`}>
             <div className={styles.watchLabelRight}>
               <div>
-                <h4>ROLEX</h4>
-                <span>CHRONOMETER WRISTWATCH</span>
+                <h4>LUXURY</h4>
+                <span>CASCADE DROP EARRINGS</span>
               </div>
               <div className={styles.line}></div>
             </div>
             <div className={styles.imageContainer}>
-              <img src="https://images.unsplash.com/photo-1587836374828-cb4387df3c56?q=80&w=500&auto=format&fit=crop" alt="Rolex Watch" />
+              <img src="/New folder/earing4.png" alt="Cascade Drop Earrings" />
             </div>
           </div>
         </div>
@@ -90,13 +90,12 @@ const FeaturedProducts = () => {
         {/* Right Side: Content */}
         <div className={styles.contentWrapper} ref={contentRef}>
           <div className={styles.titleContainer}>
-            <span className={styles.largeNumber}>3</span>
-            <h2>Watch Collections For<br/>the best men's watches</h2>
+            <h2>Earring Collections For<br/>Every Timeless Moment</h2>
           </div>
           <p>
-            Bringing forward a collection with an aesthetic appeal for a broad market while ensuring exceptional results is a challenge for any organization. Hemang Gems provides a systematic approach to creating timeless designs that are consistently reproduced through the company's in-house capabilities.
+            From delicate everyday studs to breathtaking chandelier drops, each pair in our earring collection is meticulously sculpted with precision-cut diamonds and luminous precious metals to enhance your natural radiance.
           </p>
-          <Link to="/catalogue" className={styles.viewLink}>
+          <Link to="/catalogue#earring" className={styles.viewLink}>
             VIEW CATALOGUE <ArrowRight size={18} />
           </Link>
         </div>
