@@ -149,7 +149,7 @@ const About = () => {
         <div ref={text2Ref} className={styles.watermarkTextBottom}>selection</div>
       </section>
 
-      {/* 3. Modular About Us Section */}
+      {/* 3. Our Artistry & Heritage Section */}
       <section className={styles.modularSection}>
         {/* Background Grid Lines */}
         <div className={styles.gridLines}>
@@ -159,34 +159,34 @@ const About = () => {
         <div className={styles.modularContainer}>
           <div className={styles.modularColLeft}>
             <div className={styles.imgWrapperLeft}>
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="Woman smiling" />
+              <img src="/New folder/diamon jwelery2.png" alt="Hemang Gems Luxury Diamond Jewelry" />
             </div>
           </div>
 
           <div className={styles.modularColCenter}>
             <div className={styles.overflowHidden}>
-              <h4 className={`${styles.sectionLabel} animateText`}>ABOUT US</h4>
+              <h4 className={`${styles.sectionLabel} animateText`}>OUR PHILOSOPHY</h4>
             </div>
             <div className={styles.overflowHidden}>
-              <h2 className={`${styles.sectionTitle} animateText`}>Modular fine jewelry</h2>
+              <h2 className={`${styles.sectionTitle} animateText`}>Mastery in Every Facet</h2>
             </div>
             <div className={styles.overflowHidden}>
               <p className={`${styles.sectionText} animateText`}>
-                With Bijoux, we've built a clever,<br />
-                customizable jewelry line that morphs with<br />
-                you. A necklace becomes a pair of anklets;<br />
-                an earring turns into a ring. Crafted from the<br />
-                finest materials and precious stones,<br />
-                Bijoux's contemporary fine jewelry can be<br />
-                modified to match your mood, no matter<br />
-                where you are.
+                At Hemang Gems, our heritage is rooted in the pursuit<br />
+                of perfection. Each piece is meticulously shaped by<br />
+                master artisans using certified, ethically sourced diamonds<br />
+                and hallmarked precious gold.<br /><br />
+                From breathtaking bridal sets to subtle everyday heirlooms,<br />
+                we celebrate life's most cherished milestones with<br />
+                uncompromising luxury, timeless radiance, and bespoke<br />
+                artistry designed to last generations.
               </p>
             </div>
           </div>
 
           <div className={styles.modularColRight}>
             <div className={styles.imgWrapperRight}>
-              <img src="https://images.unsplash.com/photo-1599643478514-4a820c56a8e8?q=80&w=600&auto=format&fit=crop" alt="Necklaces" />
+              <img src="/New folder/south1.png" alt="Hemang Gems Fine Jewelry" />
             </div>
           </div>
         </div>
