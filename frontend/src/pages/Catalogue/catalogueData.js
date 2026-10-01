@@ -88,6 +88,14 @@ export const catalogueSections = [
     "categoryLabel": "Mangalsutra",
     "theme": "light",
     "images": [
+      "/mangalsutra/Make_cinematic_images_fir_website_2K_20261001084533.jpg.jpeg",
+      "/mangalsutra/Make_cinematic_images_website_2K_20261001084706.jpg.jpeg",
+      "/mangalsutra/Mangalsutra_with_pendant_2K_20261001011105.jpg.jpeg",
+      "/mangalsutra/Mangalsutra_with_pendant_for_web._2K_20261001003339.jpg.jpeg",
+      "/mangalsutra/Mangalsutra_with_pendant_for_web._2K_20261001003547.jpg.jpeg",
+      "/mangalsutra/Mangalsutra_with_pendant_for_web._2K_20261001003910.jpg.jpeg",
+      "/mangalsutra/Mangalsutra_with_pendant_for_web._2K_20261001010651.jpg.jpeg",
+      "/mangalsutra/Mangalsutra_with_pendant_for_web._2K_20261001083310(1).jpg.jpeg",
       "/New folder/mangalsutra.png"
     ]
   },
