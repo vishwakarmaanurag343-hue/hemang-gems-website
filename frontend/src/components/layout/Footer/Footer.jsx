@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.topSection}>
         <div className={styles.brandInfo}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1rem' }}>
-            <img src="/logo.png" alt="HG Logo" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} />
-            <h3 style={{ margin: 0 }}>HEMANG GEMS</h3>
+          <div className={styles.brandLogoWrapper}>
+            <img src="/logo.png" alt="HG Logo" />
+            <h3>HEMANG GEMS</h3>
           </div>
           <p>
             Hemang Gems is a full-service luxury jewelry manufacturer specializing in bespoke and commercial design.
