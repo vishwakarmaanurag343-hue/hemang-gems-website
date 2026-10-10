@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { MapPin, Phone, Mail, Clock, ArrowUpRight, PhoneCall } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowUpRight, PhoneCall, Instagram, Facebook, Linkedin, Twitter } from 'lucide-react';
 import styles from './Contact.module.scss';
 
 const Contact = () => {
@@ -192,10 +192,18 @@ const Contact = () => {
             <div className={styles.socialSection}>
               <h4>Social Media :</h4>
               <div className={styles.socialIcons}>
-                <a href="#" className={styles.socialCircle}>Fb</a>
-                <a href="#" className={styles.socialCircle}>Tw</a>
-                <a href="#" className={styles.socialCircle}>In</a>
-                <a href="#" className={styles.socialCircle}>Ig</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="Instagram">
+                  <Instagram size={18} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="Facebook">
+                  <Facebook size={18} />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="LinkedIn">
+                  <Linkedin size={18} />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="Twitter">
+                  <Twitter size={18} />
+                </a>
               </div>
             </div>
           </div>

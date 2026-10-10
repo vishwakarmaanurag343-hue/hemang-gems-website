@@ -301,20 +301,22 @@
       gap: 0.8rem;
       
       .socialCircle {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         background-color: $accent-gold;
         color: #FFF;
-        display: flex;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        transition: transform 0.2s, background-color 0.2s;
+        transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 4px 10px rgba(200, 155, 60, 0.25);
         
         &:hover {
           transform: translateY(-3px);
           background-color: $dark-bg;
+          box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
         }
       }
     }
