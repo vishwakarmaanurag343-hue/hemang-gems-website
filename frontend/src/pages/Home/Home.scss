@@ -81,10 +81,14 @@ html:has(.home-page) {
         color: #FFF;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
+        .rotating-gold,
         .rotating-black {
-          color: #000;
+          color: #c89b3c;
+          background: linear-gradient(135deg, #f3d79b 0%, #c89b3c 50%, #dfba73 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           text-shadow: none;
-          font-weight: 600;
+          font-weight: 700;
         }
       }
 
