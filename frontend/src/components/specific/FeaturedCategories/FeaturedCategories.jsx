@@ -66,9 +66,9 @@ const FeaturedCategories = () => {
         
         <Link 
           to="/catalogue#earring"
-          className={`${styles.bentoItem} ${styles.imageItem} ${styles.darkBg}`}
+          className={`${styles.bentoItem} ${styles.imageItem} ${styles.earringsItem}`}
           ref={el => itemsRef.current[2] = el}
-          style={{ backgroundImage: `url('/New folder/south5.png')` }}
+          style={{ backgroundImage: `url('/WhatsApp Image 2026-09-23 at 9.08.29 PM.jpeg')` }}
         >
           <div className={styles.gradientOverlay}></div>
           <h3>Earrings</h3>
@@ -79,7 +79,7 @@ const FeaturedCategories = () => {
           to="/catalogue#diamond-jewelry"
           className={`${styles.bentoItem} ${styles.span2} ${styles.imageItem}`}
           ref={el => itemsRef.current[3] = el}
-          style={{ backgroundImage: `url('/New folder/south6.png')` }}
+          style={{ backgroundImage: `url('/New folder/diamon jwelery2.png')` }}
         >
           <div className={styles.gradientOverlay}></div>
           <h3>Diamond Jewelry</h3>
@@ -89,7 +89,7 @@ const FeaturedCategories = () => {
           to="/catalogue#ring"
           className={`${styles.bentoItem} ${styles.imageItem}`}
           ref={el => itemsRef.current[4] = el}
-          style={{ backgroundImage: `url('/New folder/south7.png')` }}
+          style={{ backgroundImage: `url('/New folder/ring1.png')` }}
         >
           <div className={styles.gradientOverlay}></div>
           <h3>Rings</h3>
@@ -99,7 +99,7 @@ const FeaturedCategories = () => {
           to="/catalogue#mangalsutra"
           className={`${styles.bentoItem} ${styles.imageItem}`}
           ref={el => itemsRef.current[5] = el}
-          style={{ backgroundImage: `url('/New folder/south8.png')` }}
+          style={{ backgroundImage: `url('/mangalsutra/mangalsutra4.jpeg')` }}
         >
           <div className={styles.gradientOverlay}></div>
           <h3>Mangalsutras</h3>
