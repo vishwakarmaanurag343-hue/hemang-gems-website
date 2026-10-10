@@ -43,7 +43,7 @@ const OurServices = () => {
         
         {/* Left Column */}
         <div className={styles.productCol} ref={leftRef}>
-          <h2><MaskedText text="Gold Diamond Jewellery" /></h2>
+          <h2><MaskedText text="Gold Jewellery" /></h2>
           <div className={styles.imageWrapper}>
             <img 
               src="/New folder/diamon jwelery1.png" 
