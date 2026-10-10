@@ -43,7 +43,7 @@ const Home = () => {
             <p>
               Meticulously crafted, <RotatingText words={['enduringly yours.', 'exclusively yours.', 'forever yours.']} className="rotating-black" /> Elevate your daily presence with pieces designed to belong to you alone.
             </p>
-            <Link to="/catalogue" className="text-link-btn">START SHOPPING</Link>
+            <Link to="/catalogue" className="text-link-btn">EXPLORE COLLECTION</Link>
             <h1>Silent Luxury</h1>
           </div>
         </div>

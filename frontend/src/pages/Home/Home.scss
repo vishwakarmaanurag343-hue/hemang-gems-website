@@ -98,10 +98,13 @@ html:has(.home-page) {
         cursor: pointer;
         padding: 0;
         margin-bottom: 3rem;
-        text-shadow: none; // override
+        display: inline-block;
         position: relative;
         text-transform: uppercase;
-        @include diamond-shimmer(#111, #555, #111); // Dark shimmer because home title is black now
+        color: #c89b3c;
+        background: linear-gradient(135deg, #dfba73 0%, #c89b3c 50%, #b88628 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         
         &::after {
           content: '';
@@ -109,8 +112,8 @@ html:has(.home-page) {
           left: 0;
           bottom: -4px;
           width: 0;
-          height: 1px;
-          background-color: #FFF;
+          height: 2px;
+          background: linear-gradient(90deg, #dfba73, #c89b3c);
           transition: width 0.3s ease;
         }
 
@@ -125,8 +128,12 @@ html:has(.home-page) {
         font-weight: 400;
         line-height: 0.9;
         margin: 0;
-        color: #111;
         letter-spacing: -2px;
+        color: #c89b3c;
+        background: linear-gradient(135deg, #f3d79b 0%, #c89b3c 50%, #9e7220 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4));
       }
     }
 
