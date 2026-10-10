@@ -162,14 +162,15 @@ const Contact = () => {
                 <div className={styles.iconBox}><MapPin size={20} /></div>
                 <div className={styles.cardText}>
                   <h4>Office</h4>
-                  <p>123 Luxury Avenue, Dubai</p>
+                  <p>Jewellery &amp; Gemplex Building 2,<br />6th Floor, Unit 26,<br />Dubai, United Arab Emirates</p>
                 </div>
               </div>
               <div className={styles.infoCard}>
                 <div className={styles.iconBox}><Phone size={20} /></div>
                 <div className={styles.cardText}>
                   <h4>Phone</h4>
-                  <p>+971 55 123 4567</p>
+                  <p><a href="tel:+97144313559" style={{ color: 'inherit', textDecoration: 'none' }}>+971 4431 3559</a></p>
+                  <p><a href="tel:+971528909248" style={{ color: 'inherit', textDecoration: 'none' }}>+971 52890 9248</a></p>
                 </div>
               </div>
               <div className={styles.infoCard}>
@@ -210,8 +211,8 @@ const Contact = () => {
         <h2>Have a project in mind? <span>Let's Talk</span></h2>
         <p>Let us help you bring your jewelry designs to life with our expert craftsmanship and state-of-the-art facilities.</p>
         
-        <a href="tel:+971551234567" className={styles.ctaButton}>
-          <span>+971 55 123 4567</span>
+        <a href="tel:+97144313559" className={styles.ctaButton}>
+          <span>+971 4431 3559</span>
           <div className={styles.ctaIcon}><PhoneCall size={18} /></div>
         </a>
       </section>

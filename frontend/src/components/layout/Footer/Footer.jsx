@@ -19,6 +19,9 @@ const Footer = () => {
               ✉ support@hemanggems.com
             </a>
           </p>
+          <p style={{ marginTop: '0.5rem', color: '#999', fontSize: '0.8rem', lineHeight: '1.4' }}>
+            📍 Jewellery &amp; Gemplex Building 2, 6th Floor, Unit 26, Dubai, UAE
+          </p>
         </div>
         <div className={styles.linksSection}>
           <div className={styles.linkGroup}>
