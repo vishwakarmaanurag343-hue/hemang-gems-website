@@ -167,7 +167,6 @@ Phone:
 Email:
 
 support@hemanggems.com
-hitesh@hemanggems.com
 
 Location:
 
@@ -440,7 +439,6 @@ Phone:
 
 Email:
 support@hemanggems.com
-hitesh@hemanggems.com
 
 After every response, always display three suggested questions.
 

@@ -14,12 +14,9 @@ const Footer = () => {
           <p>
             Hemang Gems is a full-service luxury jewelry manufacturer specializing in bespoke and commercial design.
           </p>
-          <p style={{ marginTop: '0.8rem', color: '#c89b3c', fontSize: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+          <p style={{ marginTop: '0.8rem', color: '#c89b3c', fontSize: '0.85rem' }}>
             <a href="mailto:support@hemanggems.com" style={{ color: 'inherit', textDecoration: 'none' }}>
               ✉ support@hemanggems.com
-            </a>
-            <a href="mailto:hitesh@hemanggems.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-              ✉ hitesh@hemanggems.com
             </a>
           </p>
         </div>

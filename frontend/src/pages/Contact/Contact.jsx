@@ -184,7 +184,6 @@ const Contact = () => {
                 <div className={styles.cardText}>
                   <h4>Email</h4>
                   <p><a href="mailto:support@hemanggems.com" style={{ color: 'inherit', textDecoration: 'none' }}>support@hemanggems.com</a></p>
-                  <p><a href="mailto:hitesh@hemanggems.com" style={{ color: 'inherit', textDecoration: 'none' }}>hitesh@hemanggems.com</a></p>
                 </div>
               </div>
             </div>
